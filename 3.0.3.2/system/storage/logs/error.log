@@ -40,3 +40,5 @@
 2020-04-09 23:21:40 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.2/system/library/session/file.php on line 35
 2020-04-09 23:21:40 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.2/system/library/session/file.php on line 37
 2020-04-09 23:21:40 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.2/system/library/session/file.php on line 39
+2020-04-10 18:12:33 - PHP Notice:  unserialize(): Error at offset 0 of 63 bytes in /home/www/ocdeveloper/3.0.3.2/system/storage/modification/system/library/session/file.php on line 20
+2020-04-10 18:21:57 - PHP Notice:  unserialize(): Error at offset 0 of 63 bytes in /home/www/ocdeveloper/3.0.3.2/system/storage/modification/system/library/session/file.php on line 20

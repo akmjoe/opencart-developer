@@ -1,0 +1,102 @@
+2020-04-10 18:12:21 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 85
+LINE: 159
+LINE: 176
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 72
+LINE: 78
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 27
+
+FILE: system/library/template/twig.php
+CODE: $code = file_get_contents($file);
+LINE: 14
+----------------------------------------------------------------
+MOD: Modification for ocdeveloper
+
+FILE: system/config/default.php
+CODE: $_['session_engine']
+LINE: 40
+
+FILE: system/config/admin.php
+CODE: $_['session_engine']
+LINE: 16
+
+FILE: system/library/session/file.php
+CODE: $this->directory = substr(session_save_path(), $pos + 1);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . 'sess_' . basename($session_id);
+LINE: 6
+LINE: 32
+LINE: 50
+CODE: $file = DIR_SESSION . '/sess_' . basename($session_id);
+NOT FOUND - OPERATION SKIPPED!
+----------------------------------------------------------------
+2020-04-10 18:21:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 85
+LINE: 159
+LINE: 176
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 72
+LINE: 78
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 27
+
+FILE: system/library/template/twig.php
+CODE: $code = file_get_contents($file);
+LINE: 14
+----------------------------------------------------------------
+MOD: Modification for ocdeveloper
+
+FILE: system/config/default.php
+CODE: $_['session_engine']
+LINE: 40
+
+FILE: system/config/admin.php
+CODE: $_['session_engine']
+LINE: 16
+
+FILE: system/library/session/file.php
+CODE: $this->directory = substr(session_save_path(), $pos + 1);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . 'sess_' . basename($session_id);
+LINE: 6
+LINE: 32
+LINE: 50
+CODE: $file = DIR_SESSION . '/sess_' . basename($session_id);
+NOT FOUND - OPERATION SKIPPED!
+CODE: return json_decode($data, true);
+LINE: 22
+CODE: fwrite($handle, json_encode($data));
+LINE: 38
+----------------------------------------------------------------

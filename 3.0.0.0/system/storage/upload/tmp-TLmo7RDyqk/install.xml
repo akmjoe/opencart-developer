@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+  <name>Modification for ocdeveloper</name>
+    <id>Modification for ocdeveloper</id>
+    <code>ocdeveloper</code>
+    <version>1.0</version>
+    <author>akmjoe</author>
+
+    <file path="system/config/default">
+        <operation error="log" info="Set session manager to file">
+            <search><![CDATA[$_['session_engine']]]></search>
+            <add position="replace"><![CDATA[$_['session_engine']       = 'file';]]></add>
+        </operation>
+    </file>
+    <file path="config.php">
+        <operation error="log" info="To set session path same for all versions">
+            <search><![CDATA[define('DIR_SYSTEM']]]></search>
+            <add position="after"><![CDATA[define('DIR_UNIVERSAL', DIR_SYSTEM.'../../session/']]></add>
+        </operation>
+    </file>
+    <file path="system/library/session/file.php">
+        <operation error="log" info="Set session directory on 3.0.0.0">
+            <search><![CDATA[$file = DIR_SESSION . '/sess_' . basename($session_id);]]></search>
+            <add position="replace"><![CDATA[$file = DIR_UNIVERSAL . '/sess_' . basename($session_id);]]>
+            </add>
+        </operation>
+        <operation error="log" info="Set session directory on other versions">
+            <search><![CDATA[$this->directory = substr(session_save_path(), $pos + 1);]]></search>
+            <add position="add" offset="1"><![CDATA[$this->directory = DIR_UNIVERSAL;
+]]></add>
+        </operation>
+    </file>
+</modification>

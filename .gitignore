@@ -1,2 +1,5 @@
 settings.txt
 config.php
+**/ocdeveloper.ocmod.xml
+**/cache
+**/modification/*

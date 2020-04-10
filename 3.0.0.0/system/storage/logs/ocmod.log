@@ -1,0 +1,74 @@
+2020-04-10 17:59:55 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 48
+LINE: 106
+LINE: 118
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 30
+LINE: 36
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 13
+----------------------------------------------------------------
+MOD: Modification for ocdeveloper
+
+FILE: system/config/default.php
+CODE: $_['session_engine']
+LINE: 43
+
+FILE: system/library/session/file.php
+CODE: $file = DIR_SESSION . '/sess_' . basename($session_id);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $this->directory = substr(session_save_path(), $pos + 1);
+LINE: 13
+----------------------------------------------------------------
+2020-04-10 18:02:48 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 48
+LINE: 106
+LINE: 118
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 30
+LINE: 36
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 13
+----------------------------------------------------------------
+MOD: Modification for ocdeveloper
+
+FILE: system/config/default.php
+CODE: $_['session_engine']
+LINE: 43
+
+FILE: system/library/session/file.php
+CODE: $file = DIR_SESSION . '/sess_' . basename($session_id);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $this->directory = substr(session_save_path(), $pos + 1);
+LINE: 13
+----------------------------------------------------------------
