@@ -1,0 +1,18 @@
+2020-04-09 23:08:55 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.0.0/admin/view/stylesheet/bootstrap.css): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 14
+2020-04-09 23:08:55 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 16
+2020-04-09 23:08:55 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 18
+2020-04-09 23:08:55 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 20
+2020-04-09 23:08:55 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 22
+2020-04-09 23:08:55 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 24
+2020-04-09 23:11:05 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.0.0/admin/view/stylesheet/bootstrap.css): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 14
+2020-04-09 23:11:05 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 16
+2020-04-09 23:11:05 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 18
+2020-04-09 23:11:05 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 20
+2020-04-09 23:11:05 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 22
+2020-04-09 23:11:05 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 24
+2020-04-09 23:12:11 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.0.0/admin/view/stylesheet/bootstrap.css): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 14
+2020-04-09 23:12:11 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 16
+2020-04-09 23:12:11 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 18
+2020-04-09 23:12:11 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 20
+2020-04-09 23:12:11 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 22
+2020-04-09 23:12:11 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.0.0/admin/controller/startup/sass.php on line 24

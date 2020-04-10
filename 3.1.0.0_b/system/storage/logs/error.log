@@ -1,0 +1,56 @@
+2020-04-09 23:21:51 - PHP Warning:  fopen(/home/www/ocdeveloper/3.1.0.0_b/system/storage/session/sess_36b16adbcaf78dc92bff735547): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 35
+2020-04-09 23:21:51 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 37
+2020-04-09 23:21:51 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 39
+2020-04-09 23:21:51 - PHP Warning:  ftell() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:51 - PHP Warning:  ftruncate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:51 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
+2020-04-09 23:21:51 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
+2020-04-09 23:21:51 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
+2020-04-09 23:21:54 - PHP Warning:  fopen(/home/www/ocdeveloper/3.1.0.0_b/system/storage/session/sess_36b16adbcaf78dc92bff735547): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 35
+2020-04-09 23:21:54 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 37
+2020-04-09 23:21:54 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 39
+2020-04-09 23:21:54 - PHP Warning:  ftell() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:54 - PHP Warning:  ftruncate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:54 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
+2020-04-09 23:21:54 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
+2020-04-09 23:21:54 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
+2020-04-09 23:21:54 - PHP Warning:  fopen(/home/www/ocdeveloper/3.1.0.0_b/system/storage/session/sess_36b16adbcaf78dc92bff735547): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 35
+2020-04-09 23:21:54 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 37
+2020-04-09 23:21:54 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 39
+2020-04-09 23:21:54 - PHP Warning:  ftell() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:54 - PHP Warning:  ftruncate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:54 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
+2020-04-09 23:21:54 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
+2020-04-09 23:21:54 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
+2020-04-09 23:21:58 - PHP Warning:  fopen(/home/www/ocdeveloper/3.1.0.0_b/system/storage/session/sess_36b16adbcaf78dc92bff735547): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 35
+2020-04-09 23:21:58 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 37
+2020-04-09 23:21:58 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 39
+2020-04-09 23:21:58 - PHP Warning:  ftell() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:58 - PHP Warning:  ftruncate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:58 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
+2020-04-09 23:21:58 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
+2020-04-09 23:21:58 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
+2020-04-09 23:21:58 - PHP Warning:  fopen(/home/www/ocdeveloper/3.1.0.0_b/system/storage/session/sess_36b16adbcaf78dc92bff735547): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 35
+2020-04-09 23:21:58 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 37
+2020-04-09 23:21:58 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 39
+2020-04-09 23:21:58 - PHP Warning:  ftell() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:58 - PHP Warning:  ftruncate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:21:58 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
+2020-04-09 23:21:58 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
+2020-04-09 23:21:58 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
+2020-04-09 23:22:30 - PHP Warning:  fopen(/home/www/ocdeveloper/3.1.0.0_b/system/storage/session/sess_36b16adbcaf78dc92bff735547): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 35
+2020-04-09 23:22:30 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 37
+2020-04-09 23:22:30 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 39
+2020-04-09 23:22:30 - PHP Warning:  ftell() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:22:30 - PHP Warning:  ftruncate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:22:30 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
+2020-04-09 23:22:30 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
+2020-04-09 23:22:30 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
+2020-04-09 23:22:30 - PHP Warning:  fopen(/home/www/ocdeveloper/3.1.0.0_b/system/storage/session/sess_36b16adbcaf78dc92bff735547): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 35
+2020-04-09 23:22:30 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 37
+2020-04-09 23:22:30 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 39
+2020-04-09 23:22:30 - PHP Warning:  ftell() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:22:30 - PHP Warning:  ftruncate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 40
+2020-04-09 23:22:30 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
+2020-04-09 23:22:30 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
+2020-04-09 23:22:30 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
