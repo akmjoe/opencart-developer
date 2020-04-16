@@ -3,3 +3,4 @@ config.php
 **/ocdeveloper.ocmod.xml
 **/cache
 **/modification/*
+install.sql
