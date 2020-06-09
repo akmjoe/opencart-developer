@@ -46,3 +46,8 @@
 2020-04-09 23:17:40 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/session/file.php on line 35
 2020-04-09 23:17:40 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/session/file.php on line 37
 2020-04-09 23:17:40 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/session/file.php on line 39
+2020-06-06 1:12:42 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/www/ocdeveloper/3.0.1.2/system/library/image.php on line 109
+2020-06-06 1:12:42 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/image.php on line 117
+2020-06-06 1:12:42 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/image.php on line 120
+2020-06-06 1:12:42 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/image.php on line 122
+2020-06-06 1:12:56 - Using image size 1000 x 614

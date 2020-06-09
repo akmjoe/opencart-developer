@@ -54,3 +54,5 @@
 2020-04-09 23:22:30 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 41
 2020-04-09 23:22:30 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 43
 2020-04-09 23:22:30 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.1.0.0_b/system/library/session/file.php on line 45
+2020-06-06 1:05:23 - PHP Warning:  move_uploaded_file(/home/www/ocdeveloper/3.1.0.0_b/system/storage/marketplace/879e53d43b.tmp): failed to open stream: Permission denied in /home/www/ocdeveloper/3.1.0.0_b/admin/controller/marketplace/installer.php on line 153
+2020-06-06 1:05:23 - PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpDafYEF' to '/home/www/ocdeveloper/3.1.0.0_b/system/storage/marketplace/879e53d43b.tmp' in /home/www/ocdeveloper/3.1.0.0_b/admin/controller/marketplace/installer.php on line 153
