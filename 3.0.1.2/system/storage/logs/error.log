@@ -51,3 +51,7 @@
 2020-06-06 1:12:42 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/image.php on line 120
 2020-06-06 1:12:42 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.2/system/library/image.php on line 122
 2020-06-06 1:12:56 - Using image size 1000 x 614
+2020-06-09 0:46:42 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.1.2/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:46:42 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.1.2/catalog/controller/extension/event/product_diagram.php on line 76
+2021-11-13 1:49:58 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.1.2/admin/controller/extension/event/product_diagram.php on line 28
+2021-11-13 1:49:58 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.1.2/admin/controller/extension/event/product_diagram.php on line 32

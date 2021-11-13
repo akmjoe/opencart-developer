@@ -46,3 +46,22 @@
 2020-06-09 0:26:41 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.3/system/library/image.php on line 182
 2020-06-09 0:26:58 - Using image size 1000 x 614
 2020-06-09 0:33:51 - Using image size 1000 x 614
+2020-06-09 0:45:21 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:45:21 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:07 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:07 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:11 - Using image size 1000 x 614
+2020-06-09 0:47:19 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:19 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:28 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:28 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:32 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:32 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:35 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:35 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:45 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:45 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:53 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:47:53 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:48:00 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:48:01 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76

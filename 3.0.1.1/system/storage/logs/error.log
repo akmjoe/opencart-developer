@@ -51,3 +51,11 @@
 2020-06-06 1:11:49 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.1/system/library/image.php on line 120
 2020-06-06 1:11:49 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.1.1/system/library/image.php on line 122
 2020-06-06 1:12:10 - Using image size 1000 x 614
+2020-06-09 0:46:38 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.1.1/catalog/controller/extension/event/product_diagram.php on line 76
+2020-06-09 0:46:38 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.1.1/catalog/controller/extension/event/product_diagram.php on line 76
+2021-11-12 16:34:36 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.1.1/catalog/controller/extension/event/product_diagram.php on line 76
+2021-11-12 16:34:36 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.1.1/catalog/controller/extension/event/product_diagram.php on line 76
+2021-11-12 16:34:41 - Using image size 1000 x 614
+2021-11-12 16:34:41 - PHP Unknown:  implode(): Passing glue string after array is deprecated. Swap the parameters in /home/www/ocdeveloper/3.0.1.1/system/storage/modification/catalog/model/catalog/product.php on line 154
+2021-11-13 1:49:53 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.1.1/admin/controller/extension/event/product_diagram.php on line 28
+2021-11-13 1:49:53 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.1.1/admin/controller/extension/event/product_diagram.php on line 32

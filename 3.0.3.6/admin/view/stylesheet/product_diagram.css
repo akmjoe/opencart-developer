@@ -1,0 +1,16 @@
+/*
+product_diagram stylesheet
+*/
+/* 
+    Created on : May 20, 2019, 2:54:22 PM
+    Author     : akmjoe
+*/
+canvas {
+    height: auto;
+    width: auto;
+}
+.canvas {
+    overflow: scroll;
+    max-width: 100%;
+    max-height: 90vh;
+}

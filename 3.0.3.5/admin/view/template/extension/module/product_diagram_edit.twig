@@ -1,0 +1,769 @@
+{{ header }}{{ column_left }}
+
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-product" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="fa fa-pencil"></i> {{ text_heading }}
+        </h3>
+        <a href="{{ link }}" target="_blank" data-toggle="tooltip" title="{{ text_link }}" class="pull-right">{{ text_link }} <i class="fa fa-external-link"></i></a>
+      </div>
+      <div class="panel-body">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-general" data-toggle="tab">{{ tab_general }}</a></li>
+            {% for image in product_images %}
+            <li><a href="#tab-image{{ image.sort_order }}" data-toggle="tab"><img src="{{ image.thumb }}" class="img-thumbnail" alt="{{ tab_image }} {{ image.sort_order }}" title="{{ text_image }} {{ image.sort_order }}"></a></li>
+            {% endfor %}
+          </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-general">
+                <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-product" class="form-horizontal">
+                    <input type="hidden" name="product_id" id="product-id" value="{{ product.product_id }}">
+                    {# Toolbar #}
+                    <div class="panel-heading" id="toolbar-image0">
+                        {# empty - only used for error handling #}
+                    </div>
+                    {# linked products (not on image) #}
+                    <div class="table-responsive">
+                    <table id="item" class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <td class="text-left">{{ entry_product }}</td>
+                          <td></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      {% set item_row = 0 %}
+                      {% for item in linked %}
+                      <tr id="item-row{{ item_row }}">
+                        <td class="text-left" style="width: 40%;">
+                          <input type="text" name="item[{{ item_row }}][name]" value="{% if key == 'name' %}{{ item.name }}{% else %}{{ item.model }}{% endif %}" placeholder="{{ entry_product }}" class="form-control" />
+                          <input type="hidden" name="item[{{ item_row }}][link_id]" value="{{ item.link_id }}" />
+                        </td>
+
+                        <td class="text-right"><button type="button" onclick="$('#item-row{{ item_row }}').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
+                      </tr>
+                      {% set item_row = item_row + 1 %}
+                      {% endfor %}
+                        </tbody>
+
+                      <tfoot>
+                        <tr>
+                          <td></td>
+                          <td class="text-right"><button type="button" onclick="addItem();" data-toggle="tooltip" title="{{ button_item_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                    </div>
+                    {% if extra_map|length %}
+                        <div class="panel-heading"><h2>{{ tab_extra }}</h2></div>
+                    <table id="extra" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <td>{{ text_image }}</td>
+                                <td>{{ text_action }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for id, items in extra_map %}
+                            <tr>
+                                <td>{{ text_extra }} {{ id }}</td>
+                                <td>
+                                <select name="extra_map[{{ id }}]">
+                                    <option value="ignore">{{ text_ignore }}</option>
+                                    <option value="delete">{{ text_delete }}</option>
+                                    <option value="unlink">{{ text_unlink }}</option>
+                                    {% for image in product_images %}
+                                    <option value="{{ image.sort_order }}">{{ text_move }} {{ image.sort_order }}</option>
+                                    {% endfor %}
+                                </select>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                </form>
+            </div>
+            {% for image in product_images %}
+            <div class="tab-pane" id="tab-image{{ image.sort_order }}">
+                {# Toolbar #}
+                <div class="panel-heading" id="toolbar-image{{ image.sort_order }}">
+                    <input type="hidden" name="image_id" id="image-id{{ image.sort_order }}" value="{{ image.sort_order }}">
+                    <form id="form-image{{ image.sort_order }}" class="form-group-sm form-inline">
+                    {# tool icons #}
+                        <button type="button" name="select" id="tool-select{{ image.sort_order }}" onclick="toolMode('select')" class="btn btn-info" data-toggle="tooltip" title="{{ text_select }}"><i class="fa fa-mouse-pointer"></i></button>
+                        <button type="button" name="add" id="tool-add{{ image.sort_order }}" onclick="toolMode('add')" class="btn btn-info" data-toggle="tooltip" title="{{ text_add }}"><i class="fa fa-object-ungroup"></i></button>
+                        <button type="button" name="move" id="tool-move{{ image.sort_order }}" onclick="toolMode('move')" class="btn btn-info" data-toggle="tooltip" title="{{ text_move }}"><i class="fa fa-arrows"></i></button>
+                        <button type="button" name="resize" id="tool-resize{{ image.sort_order }}" onclick="toolMode('resize')" class="btn btn-info" data-toggle="tooltip" title="{{ text_resize }}"><i class="fa fa-expand"></i></button>
+                        <button type="button" name="copy" id="tool-copy{{ image.sort_order }}" onclick="toolMode('copy')" class="btn btn-info" data-toggle="tooltip" title="{{ text_copy }}"><i class="fa fa-copy"></i></button>
+                        <input type="hidden" name="name" value="" id="input-name{{ image.sort_order }}">
+                        <input type="hidden" name="diagram_id" value="" id="input-diagram-id{{ image.sort_order }}">
+                        <input type="hidden" name="link_id" value="" id="input-link-id{{ image.sort_order }}">
+                        <label for="product-model">{{ entry_model }}</label>
+                        <input type="text" name="model" value="" id="input-model{{ image.sort_order }}" size="16" class="form-control">
+                        <label for="input-x{{ image.sort_order }}">{{ entry_x }}</label>
+                        <input type="text" name="x" value="" id="input-x{{ image.sort_order }}" size="4" class="form-control" onchange="saveArea()">
+                        <label for="input-y{{ image.sort_order }}">{{ entry_y }}</label>
+                        <input type="text" name="y" value="" id="input-y{{ image.sort_order }}" size="4" class="form-control" onchange="saveArea()">
+                        <label for="input-width{{ image.sort_order }}">{{ entry_width }}</label>
+                        <input type="text" name="width" value="" id="input-width{{ image.sort_order }}" size="4" class="form-control" onchange="saveArea()">
+                        <label for="input-height{{ image.sort_order }}">{{ entry_height }}</label>
+                        <input type="text" name="height" value="" id="input-height{{ image.sort_order }}" size="4" class="form-control" onchange="saveArea()">
+                        <button type="button" name="delete" id="button-delete{{ image.sort_order }}" onclick="removeArea()" class="btn-danger" data-toggle="tooltip" title="{{ text_delete }}"><i class="fa fa-times"></i></button>
+                    </form>
+                    
+                </div>
+                {# canvas #}
+                <div class="canvas">
+                    <canvas id="canvas-image{{ image.sort_order }}" width="{{ image.width }}" height="{{ image.height }}" class="panel-default">
+                        <p>{{ text_nocanvas }}</p>
+                    </canvas>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{# Include jquery canvas #}
+<script type="text/javascript" src="view/javascript/jquery/jcanvas/jcanvas.min.js"></script>
+<script type="text/javascript"><!--
+var product_id = {{ product.product_id }};
+var next_id = 1;
+var item_row = {{ item_row }};
+// drawing functions
+function drawStart(e) {
+    var tb = $('#form-image'+window.tab);
+    var c = $('#canvas-image'+window.tab);
+    if(e.which == 3 || window.tool == 'copy' && !tb.find('input[name="link_id"]').val()) {
+        window.draw = false;
+        return;
+    }
+    if(window.tool != 'copy' && tb.find('input[name="x"]').val()) {
+        tb.find('input[name="link_id"]').val('');
+        tb.find('input[name="model"]').val('');
+    }
+    tb.find('input[name="diagram_id"]').val('');
+    tb.find('input[name="x"]').val(e.offsetX).prop('readonly', false);
+    tb.find('input[name="y"]').val(e.offsetY).prop('readonly', false);
+    tb.find('input[name="width"]').val('').prop('readonly', false);
+    tb.find('input[name="height"]').val('').prop('readonly', false);
+    window.draw = addArea({
+        x: e.offsetX,
+        y: e.offsetY,
+        width: 1,
+        height: 1,
+        image_id: window.tab,
+        model: tb.find('input[name="model"]').val(),
+        link_id: tb.find('input[name="link_id"]').val()
+    });
+    tb.find('input[name="name"]').val(window.draw);
+    window.startX = e.offsetX;
+    window.startY = e.offsetY;
+    clearSelected();
+    tb.find('input[name="model"]').blur();
+}
+function drawMove(e) {
+    if(window.draw) {
+        var tb = $('#form-image'+window.tab);
+        var c = $('#canvas-image'+window.tab);
+        var width = Math.abs(e.offsetX-window.startX);
+        var height = Math.abs(e.offsetY-window.startY);
+        if(e.offsetX < window.startX) {
+            var x = e.offsetX;
+        } else {
+            var x = window.startX;
+        }
+        if(e.offsetY < window.startY) {
+            var y = e.offsetY;
+        } else {
+            var y = window.startY
+        }
+        // update layer
+        c.setLayer(window.draw, {
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            strokeStyle: 'transparent',
+            fillStyle: 'blue',
+            opacity: 0.3
+        }).drawLayers();
+        // update fields
+        tb.find('input[name="x"]').val(x);
+        tb.find('input[name="y"]').val(y);
+        tb.find('input[name="width"]').val(width);
+        tb.find('input[name="height"]').val(height);
+    }
+}
+function drawStop(e) {
+    if(!window.draw) return;
+    var tb = $('#form-image'+window.tab);
+    var c = $('#canvas-image'+window.tab);
+    tb.find('input[name="width"]').val(Math.abs(e.offsetX-window.startX));
+    tb.find('input[name="height"]').val(Math.abs(e.offsetY-window.startY));
+    if(e.offsetX < window.startX) {
+        tb.find('input[name="x"]').val(e.offsetX);
+    } else {
+        tb.find('input[name="x"]').val(window.startX);
+    }
+    if(e.offsetY < window.startY) {
+        tb.find('input[name="y"]').val(e.offsetY);
+    } else {
+        tb.find('input[name="y"]').val(window.startY);
+    }
+    c.setLayer(window.draw, {
+        fillStyle: 'transparent',
+        opacity: 1
+    }).drawLayers();
+    saveArea();
+    selectLayer(window.draw);
+    window.draw = false;
+    if(!tb.find('input[name="link_id"]').val())
+        tb.find('input[name="model"]').focus();
+}
+// selecting functions
+function clearSelected() {
+    var c = $('#canvas-image'+window.tab);
+    //console.log(c.getLayers());
+    if(c.getLayerGroup('selected')) {
+        $.each(c.getLayers(), function(index, v) {
+            if(v && v.name) {
+                //console.log(v.name);
+                c.removeLayerFromGroup(v.name, 'selected');
+            }
+        });
+    }
+    c.setLayerGroup('link', {strokeStyle: 'blue'});
+    c.setLayerGroup('unlink', {strokeStyle: 'yellow'});
+    c.setLayerGroup('selected', {strokeStyle: 'red'});
+    c.drawLayers();
+}
+
+function selectLayer(name, how) {
+    if(!name || name == 'img') return;
+    var c = $('#canvas-image'+window.tab);
+    layer = c.getLayer(name);
+    if(!layer) return;
+    switch(how) {
+        case true:// select
+             if(!layer.groups.includes('selected')) {
+                layer.groups.push('selected');
+                c.setLayer(layer.name, {groups: layer.groups});
+             }
+            break;
+        case false:// deselect
+            c.removeLayerFromGroup(layer.name, 'selected');
+            break;
+        case 'toggle':// toggle
+        default:
+            if(layer.groups.includes('selected')) {
+                c.removeLayerFromGroup(layer.name, 'selected');
+            } else {
+                layer.groups.push('selected');
+                c.setLayer(layer.name, {groups: layer.groups});
+            }
+            break;
+    }
+    c.setLayerGroup('link', {strokeStyle: 'blue'});
+    c.setLayerGroup('unlink', {strokeStyle: 'yellow'});
+    c.setLayerGroup('selected', {strokeStyle: 'red'});
+    c.drawLayers();
+}
+// area functions
+function addArea(info) {
+    //console.log(info);
+    var c = $('#canvas-image'+info['image_id']);
+    if(info['diagram_id']) {
+        var name = 'link-'+info['diagram_id'];
+    } else {
+        var name = 'linkn-'+window.next_id;
+        window.next_id++;
+    }
+    c.drawRect({
+        draggable: false,
+        layer: true,
+        groups: [(info['diagram_id']?'link':'unlink')],
+        name: name,
+        fillStyle: 'transparent',
+        strokeStyle: (info['diagram_id']?'blue':'yellow'),
+        strokeWidth: 2,
+        fromCenter: false,
+        x: info['x'],
+        y: info['y'],
+        width: info['width'],
+        height: info['height'],
+        data: {
+            diagram_id: info['diagram_id'],
+            link_id: info['link_id'],
+            image_id: info['image_id'],
+            model: info['model']
+        }
+    });
+    // now set to not draggable
+    c.setLayer(name, {draggable: false}).drawLayers();
+    // return layer name
+    return name;
+}
+
+function removeArea(layer) {
+    var c = $('#canvas-image'+window.tab);
+    if(layer) {
+        data = {
+            diagram_id: layer.data.diagram_id,
+            image_id: layer.data.image_id,
+            name: layer.name
+        };
+    } else if(c.getLayerGroup('selected') && c.getLayerGroup('selected').length > 1) {// multi selected
+        $.each(c.getLayers(), function(index, v) {
+            if(v && v.name && v.groups.includes('selected')) {// remove layer
+                removeArea(v);
+            }
+        });
+        return;
+    } else {
+        data = $('#form-image'+window.tab+' input,#product-id, #toolbar-image'+window.tab+' input');
+    }
+    $.ajax({
+        url: 'index.php?route=extension/module/product_diagram/remove&user_token={{ user_token }}',
+        type: 'post',
+        data: data,
+        dataType: 'json',
+        success: function(json) {
+            $('.alert-dismissible, .text-danger').remove();
+            $('#canvas-image'+json['image_id']).removeLayer(json['name']);
+            $('#canvas-image'+json['image_id']).drawLayers();
+            $('#form-image'+json['image_id']+' input').val('');
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+    });
+}
+
+function saveArea(data) {
+    // if all info, save
+    var c = $('#canvas-image'+window.tab);
+    if(data) {// called recursively
+        console.log(data);
+    } else if(c.getLayerGroup('selected') && c.getLayerGroup('selected').length > 1) {// multi selected
+        selected = [];
+        $.each($('#canvas-image'+window.tab).getLayers(), function(index, v) {
+            if(v && v.name && v.groups.includes('selected')) {// remove layer
+                selected.push($.extend(true, {}, v));
+            }
+        });
+        selected.forEach(function(layer) {
+            saveArea({
+                x: layer.x,
+                y: layer.y,
+                width: layer.width,
+                height: layer.height,
+                name: layer.name,
+                product_id: $('#product-id').val(),
+                image_id: layer.data.image_id,
+                diagram_id: layer.data.diagram_id,
+                link_id: $('#input-link-id'+window.tab).val(),
+                model: $('#input-model'+window.tab).val(),
+            });
+        });
+        return;
+    } else if(!$('#input-x'+window.tab).val() || !$('#input-y'+window.tab).val() || !$('#input-width'+window.tab).val() || !$('#input-height'+window.tab).val()) {
+        return;
+    } else {
+        data = $('#form-image'+window.tab+' input,#product-id, #toolbar-image'+window.tab+' input');
+    }
+    if($('#input-link-id'+window.tab).val()) {
+        console.log('save');
+        // save it via ajax
+        $.ajax({
+            url: 'index.php?route=extension/module/product_diagram/area&user_token={{ user_token }}',
+            type: 'post',
+            data: data,
+            dataType: 'json',
+            success: function(json) {
+                $('.alert-dismissible, .text-danger').remove();
+                if (json['error']) {
+                    $('#toolbar-image'+json['image_id']).append('<div class="alert alert-warning alert-dismissible">' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                } else {
+                    json['selected'] = true;
+                    updateArea(json);
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    } else {
+        console.log('add');
+        // add to canvas without saving
+        data = {};
+        $('#form-image'+window.tab+' input,#product-id, #toolbar-image'+window.tab+' input').serializeArray().map(function(x){data[x.name] = x.value;});
+        if(data['name']) {
+            updateArea(data);
+        } else {
+            addArea(data);
+        }
+    }
+}
+
+function updateArea(info) {
+    //console.log(info);
+    if(info['name']) {
+        c = $('#canvas-image'+info['image_id']);
+        c.setLayer(info['name'], {
+            name: (info['diagram_id']?'link-'+info['diagram_id']:info['name']),
+            groups: [(info['diagram_id']?'link':'unlink')],
+            x: info['x'],
+            y: info['y'],
+            width: info['width'],
+            height: info['height'],
+            data: {
+                diagram_id: info['diagram_id'],
+                link_id: info['link_id'],
+                image_id: info['image_id'],
+                model: info['model']
+            }
+        });
+        if(info['selected']) {
+            selectLayer(info['name'], true);
+        } else {
+            selectLayer(info['name'], false);
+        }
+    } else {
+        addArea(info);
+        if(info['selected']) {
+            selectLayer(info['name'], true);
+        } else {
+            selectLayer(info['name'], false);
+        }
+    }
+}
+// display functions
+function setToolbar(layer) {
+    // sets toolbar display to selected layer
+    var tb = $('#form-image'+window.tab);
+    var c = $('#canvas-image'+window.tab);
+    if(c.getLayerGroup('selected') && c.getLayerGroup('selected').length == 1) {// single selected
+        layer = c.getLayerGroup('selected')[0];
+        tb.find('input[name="name"]').val(layer.name);
+        tb.find('input[name="link_id"]').val(layer.data.link_id);
+        tb.find('input[name="diagram_id"]').val(layer.data.diagram_id);
+        tb.find('input[name="x"]').val(layer.x).prop('readonly', false);
+        tb.find('input[name="y"]').val(layer.y).prop('readonly', false);
+        tb.find('input[name="width"]').val(layer.width).prop('readonly', false);
+        tb.find('input[name="height"]').val(layer.height).prop('readonly', false);
+        tb.find('input[name="model"]').val(layer.data.model);
+    } else if(c.getLayerGroup('selected')) {// multi selected
+        tb.find('input[name="name"]').val('');
+        tb.find('input[name="link_id"]').val('');
+        tb.find('input[name="diagram_id"]').val('');
+        tb.find('input[name="x"]').val('').prop('readonly', 'readonly');
+        tb.find('input[name="y"]').val('').prop('readonly', 'readonly');
+        tb.find('input[name="width"]').val('').prop('readonly', 'readonly');
+        tb.find('input[name="height"]').val('').prop('readonly', 'readonly');
+        tb.find('input[name="model"]').val('--');
+    } else {
+        tb.find('input[name="name"]').val('');
+        tb.find('input[name="link_id"]').val('');
+        tb.find('input[name="diagram_id"]').val('');
+        tb.find('input[name="x"]').val('').prop('readonly', false);
+        tb.find('input[name="y"]').val('').prop('readonly', false);
+        tb.find('input[name="width"]').val('').prop('readonly', false);
+        tb.find('input[name="height"]').val('').prop('readonly', false);
+        tb.find('input[name="model"]').val('').prop('readonly', false);
+    }
+}
+// tool functions
+function toolMode(tool) {
+    window.tool = tool;
+    if(window.tab) {
+        tab = window.tab;
+        var c = $('#canvas-image'+window.tab);
+        // de-activate all tools
+        $('#form-image'+tab+' button.btn').removeClass('btn-primary');
+        $('#form-image'+tab+' button.btn').addClass('btn-info');
+        // activate tool
+        $('#tool-'+tool+tab).removeClass('btn-info');
+        $('#tool-'+tool+tab).addClass('btn-primary');
+        // de-select all
+        clearSelected();
+        // reset toolbar
+        setToolbar();
+        // disable all mouse events
+        c.off('mousedown', drawStart);
+        c.off('mousemove', drawMove);
+        c.off('mouseup', drawStop);
+        c.off('mouseup', clearSelected);
+        c.off('mouseup', setToolbar);
+        
+        c.setLayers({
+            draggable: false,
+            mousedown: function(){;},
+            mouseup: function(){;},
+            mousemove: function(){;},
+            click: function(){;}
+        }).drawLayers();
+        
+        // set mode
+        switch(tool) {
+            case 'add':
+                // set cursor
+                c.css('cursor', 'crosshair');
+                // enable draw mode
+                c.mousedown(drawStart);
+                c.mousemove(drawMove);
+                c.mouseup(drawStop);
+                console.log('add');
+                break;
+            case 'move':
+                c.setLayers({
+                    draggable: true,
+                    drag: function(layer) {
+                        setToolbar(layer);
+                    },
+                    dragstart: function (layer) {
+                    },
+                    dragstop: function(layer) {
+                        setToolbar(layer);
+                        saveArea();
+                    },
+                    mousedown: function(layer) {
+                        c.css('cursor', 'move');
+                        clearSelected();
+                        selectLayer(layer.name, true);
+                        setToolbar();
+                    },
+                    mouseup: function(layer) {
+                        c.css('cursor', 'grab');
+                        selectLayer(layer.name, true);
+                    }
+                });
+                c.css('cursor', 'grab');
+                console.log('move');
+                break;
+            case 'resize':
+                c.setLayers({
+                    mousedown: function(layer) {
+                        clearSelected();
+                        selectLayer(layer.name);
+                        c.css('cursor', 'se-resize');
+                        window.startX = layer.eventX-layer.width;
+                        window.startY = layer.eventY-layer.height;
+                        window.layerResize = true;
+                    },
+                    mousemove: function(layer) {
+                        if(window.layerResize) {
+                            layer.width = layer.eventX-window.startX;
+                            layer.height = layer.eventY-window.startY;
+                            setToolbar();
+                        }
+                    },
+                    mouseup: function(layer) {
+                        window.layerResize = false;
+                        c.css('cursor', 'default');
+                        setToolbar();
+                        saveArea();
+                        selectLayer(layer.name);
+                    }
+                });
+                c.css('cursor', 'default');
+                console.log('resize');
+                break;
+            case 'select':
+                c.setLayers({
+                    mousedown: function(layer) {
+                        selectLayer(layer.name, 'toggle');
+                        // now set toolbar
+                        setToolbar();
+                        if(layer.name) {
+                            $('#canvas-image'+window.tab).off('mouseup', clearSelected);
+                            $('#canvas-image'+window.tab).off('mouseup', setToolbar);
+                        }
+                    },
+                    mouseup: function(layer) {
+                        $('#canvas-image'+window.tab).mouseup(clearSelected);
+                        $('#canvas-image'+window.tab).mouseup(setToolbar);
+                    }
+                });
+                c.mouseup(clearSelected);
+                c.mouseup(setToolbar);
+                c.css('cursor', 'pointer');
+                console.log('select');
+                break;
+            case 'copy':
+                // set select mode
+                c.css('cursor', 'pointer');
+                c.setLayers({
+                    mousedown: function(layer) {
+                        c.css('cursor', 'pointer');
+                        selectLayer(layer.name, true);
+                        setToolbar();
+                        // set copy mode
+                        c.css('cursor', 'copy');
+                        c.setLayers({
+                            mousedown: function(layer) {
+                                ;
+                            },
+                            mouseup: function(layer) {
+                                ;
+                            },
+                        }).drawLayers();
+                        // now set draw mode
+                        c.mousedown(drawStart);
+                        c.mousemove(drawMove);
+                        c.mouseup(drawStop);
+                    },
+                    mouseup: function(layer) {
+                        ;
+                    }
+                });
+                console.log('copy');
+                break;
+        }
+        // now reset image layer
+        c.setLayer('img', {
+            draggable: false,
+            mousedown: function(){;},
+            mouseup: function(){;},
+            mousemove: function(){;},
+            click: function(){;}
+        });
+        c.drawLayers()
+    }
+}
+// unlinked product
+function addItem() {
+    html  = '<tr id="item-row' + item_row + '">';
+	html += '  <td class="text-left" style="width: 20%;"><input type="text" name="item[' + item_row + '][name]" value="" placeholder="{{ entry_item }}" class="form-control" /><input type="hidden" name="item[' + item_row + '][link_id]" value="" /></td>';
+	
+	html += '  <td class="text-right"><button type="button" onclick="$(\'#item-row' + item_row + '\').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+    html += '</tr>';
+
+	$('#item tbody').append(html);
+
+	itemautocomplete(item_row);
+
+	item_row++;
+}
+
+$('#item tbody tr').each(function(index, element) {
+	itemautocomplete(index);
+});
+// autocomplete
+$('input[name=\'model\']').autocomplete({
+	'source': function(request, response) {
+		$.ajax({
+			url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token }}&limit=10&sort=p.model&filter_{{ key }}=' +  encodeURIComponent(request),
+			dataType: 'json',
+			success: function(json) {
+				response($.map(json, function(item) {
+					return {
+						label: item['model'],
+						value: item['product_id']
+					}
+				}));
+			}
+		});
+	},
+	'select': function(item) {
+		$('input[name=\'model\']').val(item['label']);
+		$('input[name=\'link_id\']').val(item['value']);
+                saveArea();
+	},
+});
+
+function itemautocomplete(item_row) {
+	$('input[name=\'item[' + item_row + '][name]\']').autocomplete({
+		'source': function(request, response) {
+			$.ajax({
+				url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token }}&limit=10&sort=p.model&filter_{{ key }}=' +  encodeURIComponent(request),
+				dataType: 'json',
+				success: function(json) {
+					response($.map(json, function(item) {
+						return {
+							label: item['model'],
+                                                        value: item['product_id']
+						}
+					}));
+				}
+			});
+		},
+		'select': function(item) {
+			$('input[name=\'item[' + item_row + '][name]\']').val(item['label']);
+			$('input[name=\'item[' + item_row + '][link_id]\']').val(item['value']);
+		}
+	});
+}
+// right click
+$('canvas').on("contextmenu", function(e) {
+    e.preventDefault();
+    if(window.tool == 'copy') {
+        toolMode('copy');
+    }
+})
+// key press
+
+// Page Load
+// add all existing
+$(document).ready(function () {
+    toolMode('select');
+{% for image in product_images %}
+    // initialize canvas
+    var canvas{{ image.sort_order }} = $('#canvas-image{{ image.sort_order }}');
+    // place image
+    canvas{{ image.sort_order }}.drawImage({
+        source: '{{ image.image }}',
+        x: 0,
+        y: 0,
+        fromCenter: false,
+        rotate: 0,
+        layer: true,
+        name: 'img'
+    });
+{% endfor %}
+// maps
+{% for map in maps %}
+    {% for item in map %}
+    addArea({
+        {% for key, value in item %}{{ key }}: '{{ value }}',{% endfor %}
+        width: {{ item.x2 }} - {{ item.x1 }},
+        height: {{ item.y2 }} - {{ item.y1 }},
+        x: {{ item.x1 }},
+        y: {{ item.y1 }}
+    });
+    {% endfor %}
+{% endfor %}
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var target = $(e.target).attr("href") // activated tab
+        if(target) {
+            target = target.replace('#tab-image', '');
+            window.tab = target;
+            toolMode(window.tool);
+        }
+    });
+});
+//--></script>
+{{ footer }}

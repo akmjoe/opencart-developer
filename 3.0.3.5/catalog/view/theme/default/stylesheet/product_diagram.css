@@ -1,0 +1,171 @@
+/*
+product_diagram stylesheet
+*/
+/* 
+    Created on : May 20, 2019, 2:54:22 PM
+    Author     : akmjoe
+*/
+.diagram {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    position:relative;
+    margin-bottom: 40px;
+}
+.diagram img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+.nav-tabs {
+    background-color: #f3f3f3;
+}
+.product-thumb.highlight {
+    border-color: #ff1111;
+}
+.area.highlight {
+    border: 1px solid #ff1111;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+.diagram .popover {
+    min-width: 250px;
+}
+.popover .button-close {
+    float: right!important;
+    margin-top: -4px;
+}
+.popover-content {
+    padding: 0!important;
+}
+.popover-content .product-thumb {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+@media (max-width: 478px) {
+	.popover {
+            left: 0!important;
+            
+            min-width: 100%;
+	}
+}
+
+button.nav-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  box-shadow: none;
+  touch-action: manipulation; }
+
+.nav-arrow {
+  position: fixed;
+  opacity: 0.65;
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: transparent; }
+  .nav-arrow:active {
+    margin-top: -54px; }
+  .nav-arrow:hover,
+  .nav-arrow:focus {
+    opacity: 1; }
+  .nav-arrow:before,
+  .nav-arrow:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 35px;
+    margin-left: 35px;
+    border: medium inset transparent; }
+  .nav-arrow:after {
+    border-top-width: 13px;
+    border-bottom-width: 13px;
+    top: 8px; }
+  .nav-arrow:before {
+    border-top-width: 21px;
+    border-bottom-width: 21px;
+    opacity: 0.7; }
+
+.nav-arrow-left {
+  left: -25px; }
+  .nav-arrow-left:after {
+    border-right: 17px solid #FFF;
+    /*margin-left: 31px;*/ }
+  .nav-arrow-left:before {
+    margin-left: 25px;
+    border-right: 27px solid #3F3F3F; }
+
+.nav-arrow-right {
+  right: -25px; }
+  .nav-arrow-right:after {
+    border-left: 17px solid #FFF;
+    /*margin-left: 39px;*/ }
+  .nav-arrow-right:before {
+    border-left: 27px solid #3F3F3F; }
+
+@media all and (max-width: 900px) {
+  .nav-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); }
+  .nav-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0; }
+  .nav-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%; }
+}
+/** 
+* For tutorial
+*/
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3); /* Black background with opacity */
+  z-index: 101; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#diagram-instructions h1 {
+    font-size: 25px;
+}
+#diagram-instructions p {
+    font-size: 18px;
+}
+#instructions-hide {
+    z-index: 1070;
+}
+
+.tooltip > .tooltip-inner {
+    font-size: 20px;
+    padding: 10px;
+}
+.nav-tabs li.tutorial {
+    background-color: #fff;
+}
+
+aside {
+    border: 2px gray solid;
+}
+
+/* Make product icon smaller */

@@ -1,0 +1,114 @@
+2021-11-13 2:15:01 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: Modification for ocdeveloper
+
+FILE: system/config/default.php
+CODE: $_['session_engine']
+LINE: 43
+
+FILE: system/config/catalog.php
+CODE: $_['session_engine']
+LINE: 20
+
+FILE: system/config/admin.php
+CODE: $_['session_engine']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: system/library/session/file.php
+CODE: $this->directory = substr(session_save_path(), $pos + 1);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . 'sess_' . basename($session_id);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . '/sess_' . basename($session_id);
+LINE: 6
+LINE: 26
+LINE: 44
+CODE: return json_decode($data, true);
+NOT FOUND - OPERATION SKIPPED!
+CODE: fwrite($handle, json_encode($data));
+NOT FOUND - OPERATION SKIPPED!
+----------------------------------------------------------------
+2021-11-13 2:15:09 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: Modification for ocdeveloper
+
+FILE: system/config/default.php
+CODE: $_['session_engine']
+LINE: 43
+
+FILE: system/config/catalog.php
+CODE: $_['session_engine']
+LINE: 20
+
+FILE: system/config/admin.php
+CODE: $_['session_engine']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: system/library/session/file.php
+CODE: $this->directory = substr(session_save_path(), $pos + 1);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . 'sess_' . basename($session_id);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . '/sess_' . basename($session_id);
+LINE: 6
+LINE: 26
+LINE: 44
+CODE: return json_decode($data, true);
+NOT FOUND - OPERATION SKIPPED!
+CODE: fwrite($handle, json_encode($data));
+NOT FOUND - OPERATION SKIPPED!
+----------------------------------------------------------------

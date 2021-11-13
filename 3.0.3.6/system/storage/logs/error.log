@@ -1,0 +1,63 @@
+2021-11-12 17:17:50 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.3.6/system/storage/session//sess_3faf4a33047680162bd0dae801): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 29
+2021-11-12 17:17:50 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 31
+2021-11-12 17:17:50 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 33
+2021-11-12 17:17:50 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 35
+2021-11-12 17:17:50 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 37
+2021-11-12 17:17:50 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 39
+2021-11-12 17:17:53 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.3.6/system/storage/session//sess_3faf4a33047680162bd0dae801): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 29
+2021-11-12 17:17:53 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 31
+2021-11-12 17:17:53 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 33
+2021-11-12 17:17:53 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 35
+2021-11-12 17:17:53 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 37
+2021-11-12 17:17:53 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 39
+2021-11-12 17:17:53 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.3.6/system/storage/session//sess_3faf4a33047680162bd0dae801): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 29
+2021-11-12 17:17:53 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 31
+2021-11-12 17:17:53 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 33
+2021-11-12 17:17:53 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 35
+2021-11-12 17:17:53 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 37
+2021-11-12 17:17:53 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 39
+2021-11-12 17:17:57 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.3.6/system/storage/session//sess_3faf4a33047680162bd0dae801): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 29
+2021-11-12 17:17:57 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 31
+2021-11-12 17:17:57 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 33
+2021-11-12 17:17:57 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 35
+2021-11-12 17:17:57 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 37
+2021-11-12 17:17:57 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 39
+2021-11-12 17:17:57 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.3.6/system/storage/session//sess_3faf4a33047680162bd0dae801): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 29
+2021-11-12 17:17:57 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 31
+2021-11-12 17:17:57 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 33
+2021-11-12 17:17:57 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 35
+2021-11-12 17:17:57 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 37
+2021-11-12 17:17:57 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 39
+2021-11-12 17:18:39 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.3.6/system/storage/session//sess_3faf4a33047680162bd0dae801): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 29
+2021-11-12 17:18:39 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 31
+2021-11-12 17:18:39 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 33
+2021-11-12 17:18:39 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 35
+2021-11-12 17:18:39 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 37
+2021-11-12 17:18:39 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 39
+2021-11-12 17:18:39 - PHP Warning:  fopen(/home/www/ocdeveloper/3.0.3.6/system/storage/session//sess_3faf4a33047680162bd0dae801): failed to open stream: Permission denied in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 29
+2021-11-12 17:18:39 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 31
+2021-11-12 17:18:39 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 33
+2021-11-12 17:18:39 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 35
+2021-11-12 17:18:39 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 37
+2021-11-12 17:18:39 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/www/ocdeveloper/3.0.3.6/system/library/session/file.php on line 39
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-12 17:19:18 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/system/storage/modification/admin/controller/catalog/product.php on line 389
+2021-11-13 1:50:21 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/admin/controller/extension/event/product_diagram.php on line 28
+2021-11-13 1:50:21 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.6/admin/controller/extension/event/product_diagram.php on line 32

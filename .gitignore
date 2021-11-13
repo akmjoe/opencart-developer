@@ -4,3 +4,5 @@ config.php
 **/cache
 **/modification/*
 install.sql
+session/sess_*
+*.log

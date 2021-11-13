@@ -72,8 +72,8 @@ setup() {
 	chmod -f -R 0775 system/config/
 	chmod -f -R 0775 system/library/
 	chmod -f -R 0775 image/catalog/
-	chmod -f 0775 system/storage/cache/
-	chmod -f 0775 system/storage/logs/
+	chmod -f -R 0775 system/storage/logs/
+	chmod -f -R 0775 system/storage/cache/
 	chmod -f 0775 system/storage/download/
 	chmod -f 0775 system/storage/upload/
 	chmod -f 0775 system/storage/modification/

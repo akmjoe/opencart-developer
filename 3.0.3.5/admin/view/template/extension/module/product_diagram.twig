@@ -1,0 +1,146 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+        <hr>
+        <p class="panel-title">{{ text_desc }}</p>
+      </div>
+      
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="diagrampart/form-data" id="form-module" class="form-horizontal">
+        
+          <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-key"><span data-toggle="tooltip" title="{{ help_key }}">{{ entry_key }}</span></label>
+            <div class="col-sm-10">
+              <select name="module_product_diagram_key" id="input-key" class="form-control">
+                {% for field in fields %}
+                {% if module_product_diagram_key == field %}
+                <option value="{{ field }}" selected="selected">{{ field }}</option>
+                {% else %}
+                <option value="{{ field }}">{{ field }}</option>
+                {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+              
+          <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-width"><span data-toggle="tooltip" title="{{ help_width }}">{{ entry_width }}</span></label>
+            <div class="col-sm-10">
+              <input type="text" name="module_product_diagram_width" id="input-width" class="form-control" value="{{ module_product_diagram_width }}">
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-height"><span data-toggle="tooltip" title="{{ help_height }}">{{ entry_height }}</span></label>
+            <div class="col-sm-10">
+              <input type="text" name="module_product_diagram_height" id="input-height" class="form-control" value="{{ module_product_diagram_height }}">
+            </div>
+          </div>
+          
+          <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-column"><span data-toggle="tooltip" title="{{ help_column }}">{{ entry_column }}</span></label>
+            <div class="col-sm-10">
+                <select name="module_product_diagram_column" id="input-column" class="form-control">
+                {% if module_product_diagram_column %}
+                <option value="1" selected="selected">{{ text_tab }}</option>
+                <option value="0">{{ text_page }}</option>
+                {% else %}
+                <option value="1">{{ text_tab }}</option>
+                <option value="0" selected="selected">{{ text_page }}</option>
+                {% endif %}
+              </select>
+            </div>
+          </div>
+              
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+            <div class="col-sm-10">
+              <select name="module_product_diagram_status" id="input-status" class="form-control">
+                {% if module_product_diagram_status %}
+                <option value="1" selected="selected">{{ text_enabled }}</option>
+                <option value="0">{{ text_disabled }}</option>
+                {% else %}
+                <option value="1">{{ text_enabled }}</option>
+                <option value="0" selected="selected">{{ text_disabled }}</option>
+                {% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-status">{{ entry_sample }}</label>
+            <div class="col-sm-10">
+                <button type="button" name="button-sample" id="button-sample" class="btn btn-info">{{ entry_button }}</button>
+                <input type="hidden" name="module_product_diagram_sample" id="input-sample" value="{{ module_product_diagram_sample }}">
+                <br>
+                <a href="{{ link_sample }}" id="link-sample" target="_blank" {% if not link_sample %}style="display:none"{% endif %}>{{ text_link }}</a>
+                <br>
+                <a href="{{ link_admin }}" id="link-admin" target="_blank" {% if not link_admin %}style="display:none"{% endif %}>{{ text_admin }}</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$(document).delegate('#button-sample', 'click', function() {
+    $.ajax({
+        url: 'index.php?route=extension/module/product_diagram/sample&user_token={{ user_token }}',
+        type: 'post',
+        data: $('#input-sample'),
+        dataType: 'json',
+        beforeSend: function() {
+        	$('#button-sample').button('loading');
+		},
+        success: function(json) {
+            $('.alert-dismissible').remove();
+
+            //$('#button-sample').button('reset');
+            console.log(json);
+            console.log(json['button']);
+            $('#button-sample').text(json.button);
+            $('#button-sample').prop('disabled', false);
+            $('#button-sample').removeClass('disabled');
+            $('#input-sample').val(json['sample']);
+            $('#button-sample').after('<div class="alert alert-success alert-dismissible">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+            $('#link-sample').attr('href', json['link']);
+            if(json['link']) {
+                $('#link-sample').show();
+            } else {
+                $('#link-sample').hide();
+            }
+            $('#link-admin').attr('href', json['admin']);
+            if(json['admin']) {
+                $('#link-admin').show();
+            } else {
+                $('#link-admin').hide();
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+    });
+});
+//--></script>
+{{ footer }}
