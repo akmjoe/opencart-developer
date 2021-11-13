@@ -112,3 +112,326 @@ NOT FOUND - OPERATION SKIPPED!
 CODE: fwrite($handle, json_encode($data));
 NOT FOUND - OPERATION SKIPPED!
 ----------------------------------------------------------------
+2021-11-13 3:28:31 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: Modification for ocdeveloper
+
+FILE: system/config/default.php
+CODE: $_['session_engine']
+LINE: 43
+
+FILE: system/config/catalog.php
+CODE: $_['session_engine']
+LINE: 20
+
+FILE: system/config/admin.php
+CODE: $_['session_engine']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: system/library/session/file.php
+CODE: $this->directory = substr(session_save_path(), $pos + 1);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . 'sess_' . basename($session_id);
+NOT FOUND - OPERATION SKIPPED!
+CODE: $file = DIR_SESSION . '/sess_' . basename($session_id);
+LINE: 6
+LINE: 26
+LINE: 44
+CODE: return json_decode($data, true);
+NOT FOUND - OPERATION SKIPPED!
+CODE: fwrite($handle, json_encode($data));
+NOT FOUND - OPERATION SKIPPED!
+----------------------------------------------------------------
+MOD: Product Diagram Module
+
+FILE: admin/model/catalog/product.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 374
+LINE: 657
+
+FILE: admin/controller/catalog/product.php
+CODE: $url .= '&order=' . $this->request->get['order'];
+LINE: 58
+LINE: 115
+LINE: 174
+LINE: 233
+LINE: 323
+LINE: 491
+LINE: 585
+CODE: 'product_id' => $result['product_id'],
+LINE: 389
+CODE: if ($this->request->post['product_seo_url']) {
+LINE: 1239
+CODE: 'limit'        => $limit
+LINE: 1316
+CODE: isset($this->request->get['filter_name']) || isset($this->request->get['filter_model'])
+LINE: 1294
+CODE: if (isset($this->request->post['model'])) {
+LINE: 645
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <div class="tab-pane" id="tab-links">
+LINE: 393
+CODE: <td class="text-right">{{ entry_sort_order }}</td>
+LINE: 1013
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+LINE: 175
+CODE: <button type="button" id="button-filter"
+LINE: 146
+CODE: if (filter_name) {
+LINE: 234
+
+FILE: admin/model/tool/image.php
+CODE: public function resize
+LINE: 15
+
+FILE: catalog/model/catalog/product.php
+CODE: if (!empty($data['filter_manufacturer_id'])) {
+LINE: 156
+LINE: 518
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 112
+CODE: <button type="button" onclick="cart.add(
+LINE: 113
+
+FILE: catalog/view/theme/default/template/product/compare.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/product/manufacturer_info.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 79
+CODE: <button type="button" onclick="cart.add(
+LINE: 80
+
+FILE: catalog/view/theme/default/template/product/manufacturer_list.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 328
+CODE: <button type="button" onclick="cart.add(
+LINE: 329
+
+FILE: catalog/view/theme/default/template/product/review.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 146
+CODE: <button type="button" onclick="cart.add(
+LINE: 147
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 80
+CODE: <button type="button" onclick="cart.add(
+LINE: 81
+
+FILE: catalog/view/theme/default/template/extension/module/account.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_login.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_login_error.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/banner.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 35
+CODE: <button type="button" onclick="cart.add(
+LINE: 36
+
+FILE: catalog/view/theme/default/template/extension/module/carousel.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/category.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/divido_calculator.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/ebay_listing.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 35
+CODE: <button type="button" onclick="cart.add(
+LINE: 36
+
+FILE: catalog/view/theme/default/template/extension/module/filter.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/google_hangouts.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/html.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/information.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/klarna_checkout_module.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 21
+CODE: <button type="button" onclick="cart.add(
+LINE: 22
+
+FILE: catalog/view/theme/default/template/extension/module/laybuy_layout.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/paypal_smart_button.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pilibaba_button.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pp_braintree_button.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/product_diagram.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 107
+LINE: 177
+CODE: <button type="button" onclick="cart.add(
+LINE: 108
+LINE: 179
+
+FILE: catalog/view/theme/default/template/extension/module/sagepay_direct_cards.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/sagepay_server_cards.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 21
+CODE: <button type="button" onclick="cart.add(
+LINE: 22
+
+FILE: catalog/view/theme/default/template/extension/module/store.twig
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+CODE: <button type="button" onclick="cart.add(
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/ussander/template/extension/module/product_diagram.twig
+CODE: <button type="button" onclick="cart.add(
+LINE: 107
+CODE: <button type="button" onclick="cart.add(
+LINE: 108
+
+FILE: catalog/view/theme/default/template/account/wishlist.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');" data-toggle="tooltip" title="{{ button_cart }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i></button>
+LINE: 48
+----------------------------------------------------------------

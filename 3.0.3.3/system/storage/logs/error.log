@@ -65,3 +65,5 @@
 2020-06-09 0:47:53 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
 2020-06-09 0:48:00 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
 2020-06-09 0:48:01 - PHP Notice:  Undefined index: products in /home/www/ocdeveloper/3.0.3.3/catalog/controller/extension/event/product_diagram.php on line 76
+2021-11-13 2:23:50 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.3/admin/controller/extension/event/product_diagram.php on line 28
+2021-11-13 2:23:50 - PHP Notice:  Undefined index: diagram in /home/www/ocdeveloper/3.0.3.3/admin/controller/extension/event/product_diagram.php on line 32

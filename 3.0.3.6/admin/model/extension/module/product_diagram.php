@@ -12,7 +12,7 @@ class ModelExtensionModuleProductDiagram extends Model {
 				`x2` int(11),
 				`y1` int(11),
 				`y2` int(11),
-				`date_modified` timestamp ON UPDATE CURRENT_TIMESTAMP,
+				`date_modified` timestamp default '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
 				PRIMARY KEY (`diagram_id`)
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 		");

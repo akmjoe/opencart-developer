@@ -3,6 +3,7 @@ class controllerExtensionEventProductDiagram extends Controller {
 	
 	public function view(&$view, &$data, &$output) {// triggered before view product form
 		// build insert html
+		return;
 		if(isset($this->request->get['product_id']) && $this->request->get['product_id']) {
 			$query = $this->db->query("select diagram from ".DB_PREFIX."product where product_id = '".(int)$this->request->get['product_id']."'");
 			$info = $query->row;

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>Twig Fix</name>
+	<version>0.1</version>
+	<author>Joe Rothrock</author>
+	<link>https://github.com/akmjoe</link>
+	<code>opencart-twigfix</code>
+  <file path="system/library/template/twig.php">
+    <operation>
+      <search>
+        <![CDATA[if (is_file($file)) {]]>
+      </search>
+      <add position="replace">
+        <![CDATA[if (defined('DIR_CATALOG') && is_file(DIR_MODIFICATION . 'admin/view/template/' . $filename . '.twig')) {	
+                $code = file_get_contents(DIR_MODIFICATION . 'admin/view/template/' . $filename . '.twig');
+            } elseif (is_file(DIR_MODIFICATION . 'catalog/view/theme/' . $filename . '.twig')) {
+                $code = file_get_contents(DIR_MODIFICATION . 'catalog/view/theme/' . $filename . '.twig');
+            } elseif (is_file($file)) {]]>
+      </add>
+    </operation>
+  </file> 
+</modification>
